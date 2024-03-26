@@ -1,0 +1,89 @@
+%
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage[short]{optidef}
+
+
+\textwidth=16cm
+\textheight=23.5cm
+\hoffset=-1.1cm
+\voffset=-1.5cm
+\addtolength{\parskip}{\baselineskip}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+
+{\large \bf University of Melbourne} 
+\vspace{-0.4cm}
+
+{\large \bf School of Mathematics and Statistics} 
+\vspace{-0.4cm}
+
+{\large \bf MAST 90014 - Optimisation for Industry}
+
+{\large \bf Individual assignment - 2023}
+
+
+{\bf Attention: Do not put your name nor student number in this document. Identification will be made automatically in canvas submission.}
+
+
+\section*{Template question answer}
+
+
+
+\paragraph{Parameters:}
+
+
+\begin{itemize}
+\item[] $I:$ set of items.
+\item[] $J:$ set of bins.
+\end{itemize}
+
+
+\paragraph{Variables:}
+
+
+\begin{itemize}
+\item[] $x_{ij}:$ binary variable equal to one if item $i \in I$ is assigned to bin $j \in J$.
+\item[] $y_{j}:$ binary variable equal to one if bin $j\in J$ is selected.
+\end{itemize}
+
+
+\paragraph{Model:}
+
+\begin{align}
+\min \quad
+& \sum_{j\in J} y_j \label{objective}
+\end{align}
+s.t.
+\begin{align}
+\sum_{j \in J} x_{ij}  &= 1, && i \in I, \label{c1} \\
+\sum_{i \in I} w_i \cdot x_{ij} &\leq c\cdot y_j  && j \in J, \label{c2} \\
+ x_{ij} & \in \{0,1\},  && i \in I, j\in J, \label{c3}\\
+ y_{j} & \in \{0,1\},  && j\in J. \label{c4}
+\end{align}
+
+\paragraph{Explanation:}
+
+\begin{itemize}
+\item[] \eqref{objective}: the objective function minimises the number of bins used.
+\item[] \eqref{c1}: all items must be placed in a bin.
+\item[] \eqref{c2}: bins capacity must be respected. Moreover, a bin can only be used if it is selected.
+\item[] \eqref{c3}: variables $x_{ij}$ are binary. 
+\item[] \eqref{c4}: variables $y_{j}$ are binary. 
+\end{itemize}
+
+
+
+
+
+
+
+\end{document}
